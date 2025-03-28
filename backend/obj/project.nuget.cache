@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YX69B9Dyeuc=",
+  "dgSpecHash": "upIa5ykjryM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\brojo\\OneDrive\\Desktop\\Winter 2025\\IS 413\\Mission11\\backend\\Mission11.csproj",
+  "projectFilePath": "C:\\Users\\brojo\\OneDrive\\Desktop\\Winter 2025\\IS 413\\Mission12_Butikofer\\backend\\Mission11.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\brojo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\brojo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

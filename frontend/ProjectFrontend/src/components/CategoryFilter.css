@@ -1,0 +1,31 @@
+.category-filter {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .category-filter h5 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #343a40;
+  }
+  
+  .checkbox-item {
+    margin-bottom: 10px;
+  }
+  
+  .category-text {
+    margin-left: 8px;
+    color: #495057;
+    font-size: 0.95rem;
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  

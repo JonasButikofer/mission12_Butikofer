@@ -1,16 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import BooksList from './components/BooksList'
 import BooksPage from './pages/BooksPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PurchasePage from './pages/PurchasePage';
+import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <BooksPage />
+      <CartProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<BooksPage />} />
+            <Route path="/purchase/:title/:bookId" element={<PurchasePage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+      </Router>
+    </CartProvider>
     </>
   )
 }

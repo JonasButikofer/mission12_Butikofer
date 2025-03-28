@@ -40,22 +40,28 @@ function CategoryFilterReal({selectedCategories, setSelectedCategories}:
     }
 
     return (
-        <div className="category-filter">
-          <h5>Project Types</h5>
-          <div>
-            {categories.map((c) => (
-              <div className="checkbox-item" key={c}>
-                <input 
-                type="checkbox" id={c} value={c}
-                onChange={handleCheckBoxChange} />
-
-
-                <label htmlFor={c} className="category-text">{c}</label>
-              </div>
-            ))}
-          </div>
+      <div className="category-filter">
+        <h5>Project Types</h5>
+        <div className="d-flex flex-column align-items-start">
+          {categories.map((c) => (
+            <div className="form-check" key={c}>
+              <input 
+                className="form-check-input"
+                type="checkbox"
+                id={c}
+                value={c}
+                onChange={handleCheckBoxChange}
+                checked={selectedCategories.includes(c)}
+              />
+              <label htmlFor={c} className="form-check-label">
+                {c}
+              </label>
+            </div>
+          ))}
         </div>
-      );
+      </div>
+    );
+    
       
 }
 

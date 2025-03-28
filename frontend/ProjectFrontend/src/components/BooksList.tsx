@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Book } from "../types/Book";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./BooksList.css";
+import { useNavigate } from "react-router-dom";
 
 function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
@@ -12,9 +13,9 @@ function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [sortAlphabetical, setSortAlphabetical] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("📚 BooksList received categories:", selectedCategories);
   }, [selectedCategories]);
 
   useEffect(() => {
@@ -76,6 +77,11 @@ function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }
                 <li><strong>Page Count:</strong> {book.pageCount}</li>
                 <li><strong>Price:</strong> <span className="text-success">${book.price.toFixed(2)}</span></li>
               </ul>
+              <button
+                className='btn btn-success'
+                onClick={() =>
+                    navigate(`/purchase/${book.title}/${book.bookId}`, {
+                    state: { price: book.price }})}>Buy</button>
             </div>
           ))}
                 {/* Page size dropdown */}

@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import { Book } from "../types/Book";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./BooksList.css";
 import { useNavigate } from "react-router-dom";
+import Pagination from "./Pagination";
 
 function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
@@ -84,22 +85,16 @@ function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }
                     state: { price: book.price }})}>Buy</button>
             </div>
           ))}
-                {/* Page size dropdown */}
-                <div className="page-size-wrapper mb-3">
-        <label htmlFor="pageSizeSelect" className="form-label me-2">
-            Results per page:
-        </label>
-        <select
-            id="pageSizeSelect"
-            className="form-select custom-page-size-dropdown"
-            value={pageSize}
-            onChange={(e) => setPageSize(Number(e.target.value))}
-        >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-        </select>
-        </div>
+                    <Pagination 
+                        currentPage={pageNum}
+                        totalPages={totalPages}
+                        pageSize={pageSize}
+                        onPageChange={setPageNum}
+                        onPageSizeChange={(newSize: SetStateAction<number>) => {
+                            setPageSize(newSize);
+                            setPageNum(1);
+                        }}
+                        />
 
 
             {/* Alphabetical Sorting Toggle */}

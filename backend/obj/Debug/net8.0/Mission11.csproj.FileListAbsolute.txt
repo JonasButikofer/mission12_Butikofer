@@ -321,3 +321,4 @@ C:\Users\brojo\OneDrive\Desktop\Winter 2025\IS 413\Mission12_Butikofer\backend\o
 C:\Users\brojo\OneDrive\Desktop\Winter 2025\IS 413\Mission12_Butikofer\backend\obj\Debug\net8.0\Mission11.pdb
 C:\Users\brojo\OneDrive\Desktop\Winter 2025\IS 413\Mission12_Butikofer\backend\obj\Debug\net8.0\Mission11.genruntimeconfig.cache
 C:\Users\brojo\OneDrive\Desktop\Winter 2025\IS 413\Mission12_Butikofer\backend\obj\Debug\net8.0\ref\Mission11.dll
+C:\Users\brojo\OneDrive\Desktop\Winter 2025\IS 413\Mission12_Butikofer\backend\bin\Debug\net8.0\Bookstore.sqlite

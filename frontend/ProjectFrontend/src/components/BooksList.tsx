@@ -24,22 +24,22 @@ function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }
       const categoryParams = selectedCategories
         .map((cat) => `category=${encodeURIComponent(cat)}`)
         .join("&");
-
+  
       try {
         console.log("Fetching books from API...");
         const response = await fetch(
-          `https://localhost:5000/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortAlphabetical=${sortAlphabetical}${
+          `https://mission13-butikofer.azurewebsites.net/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortAlphabetical=${sortAlphabetical}${
             selectedCategories.length ? `&${categoryParams}` : ""
           }`
         );
-
+  
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
+  
         const data = await response.json();
         console.log("API Response:", data);
-
+  
         if (data && data.books) {
           setBooks(data.books);
           setTotalItems(data.totalNumBooks || 0);
@@ -55,9 +55,10 @@ function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }
         setLoading(false);
       }
     };
-
+  
     fetchBooks();
   }, [pageSize, pageNum, sortAlphabetical, JSON.stringify(selectedCategories)]);
+  
 
   return (
     <div className="book-list-container">

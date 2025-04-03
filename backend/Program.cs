@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
                 "http://localhost:3000",
-                "https://delightful-dune-0d347be1e.6.azurestaticapps.net" 
+                "https://purple-dune-01288281e.6.azurestaticapps.net/" 
             )
             .AllowAnyHeader()
             .AllowAnyMethod();

@@ -1,7 +1,7 @@
 import { Book } from "../types/Book";
 
 interface fetchBookResponse {
-  book: Book[];
+  books: Book[];
   totalNumBooks: number;
 }
 

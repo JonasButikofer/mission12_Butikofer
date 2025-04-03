@@ -35,7 +35,7 @@ useEffect(() => {
     };
 
     loadBooks();
-}, [pageSize, pageNum ]) // this triggers the useEffect to tell it when to go fetch again
+}, [pageSize, pageNum, sortAlphabetical]) // this triggers the useEffect to tell it when to go fetch again
 
 const handleDelete = async (bookId: number) => {
     const confirmDelete = window.confirm('Delete book?');
@@ -82,6 +82,21 @@ const handleDelete = async (bookId: number) => {
             />
         )}
 
+            <div className="form-check mb-3">
+            <input
+                className="form-check-input"
+                type="checkbox"
+                id="sortAlphabetical"
+                checked={sortAlphabetical}
+                onChange={() => {
+                setSortAlphabetical((prev) => !prev);
+                setPageNum(1); // reset to first page when toggling
+                }}
+            />
+            <label className="form-check-label" htmlFor="sortAlphabetical">
+                Sort Alphabetically
+            </label>
+            </div>
 
             <table className="table table-bordered table-stripped">
                 <thead className="table-dark">

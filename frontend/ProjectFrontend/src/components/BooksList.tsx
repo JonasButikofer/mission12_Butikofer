@@ -85,6 +85,8 @@ function BookList({ selectedCategories = [] }: { selectedCategories?: string[] }
                     state: { price: book.price }})}>Buy</button>
             </div>
           ))}
+          <p className="text-info">Total Books Found: {totalItems}</p>
+
                     <Pagination 
                         currentPage={pageNum}
                         totalPages={totalPages}

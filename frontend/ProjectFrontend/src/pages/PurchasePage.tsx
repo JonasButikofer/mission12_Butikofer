@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { CartItem } from "../types/CartItem";

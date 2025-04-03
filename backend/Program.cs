@@ -10,11 +10,15 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost3000", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.WithOrigins(
+                "http://localhost:3000",
+                "https://delightful-dune-0d347be1e.6.azurestaticapps.net" 
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
     });
 });
+
 
 
 builder.Services.AddControllers();

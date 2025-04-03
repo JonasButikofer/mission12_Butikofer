@@ -11,13 +11,14 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowLocalhost3000", policy =>
     {
         policy.WithOrigins(
-                "http://localhost:3000",
-                "https://purple-dune-01288281e.6.azurestaticapps.net/" 
-            )
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+            "http://localhost:3000",
+            "https://purple-dune-01288281e.6.azurestaticapps.net"  // ← no slash here
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod();
     });
 });
+
 
 
 

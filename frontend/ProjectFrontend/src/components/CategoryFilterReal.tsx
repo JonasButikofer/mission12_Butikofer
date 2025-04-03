@@ -13,7 +13,7 @@ function CategoryFilterReal({selectedCategories, setSelectedCategories}:
     useEffect(() => {
         const fetchCategories = async () => {
           try {
-            const response = await fetch('https://mission13-butikofer.azurewebsites.net/Book/AllBooksGetBookCategories');
+            const response = await fetch('https://mission13-butikofer.azurewebsites.net/Book/GetBookCategories');
       
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
